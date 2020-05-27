@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Inputs with labels -->
+  <ion-item>
+    <ion-label position="floating">Item Name</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" style="margin: 5%" (click)="saveItem()">SAVE</ion-button>
+</ion-content>

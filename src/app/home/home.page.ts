@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+import { NavController } from '@ionic/angular';
+
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor() {}
+  constructor(private navController: NavController, private storageService: StorageService) {}
+
+  ngOnInit(): void {
+    this.storageService.getItemList();
+  }
+
+  deleteItem(item) {
+    this.storageService.deleteItem(item);
+  }
+
+  goDetail() {
+    this.navController.navigateForward('detail');
+  }
 
 }
